@@ -1,0 +1,1 @@
+select PasswordHash from Employees
