@@ -169,6 +169,7 @@ namespace Project_quan_li_ban_hang
                                                 MessageBox.Show("Bạn đã thêm nhân viên thành công", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                                 Load_Dssv();
                                                 SendPasswordEmail(email, password);
+                                                MessageBox.Show("Mật khẩu mới đẫ được gửi tới email: " + email);
                                             }
                                             else
                                             {
@@ -251,22 +252,24 @@ namespace Project_quan_li_ban_hang
         {
             try
             {
-                MailMessage mail = new MailMessage();
-                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com"); // Thay thế bằng máy chủ SMTP thực tế
+                string fromMail = "nguyenkinhthanh11@gmail.com";
+                string fromPassword = "rrsj izbc pxnl vuuk";
 
-                mail.From = new MailAddress("nguyenkinhthanh11@gmail.com"); // Thay thế bằng địa chỉ email của bạn
-                mail.To.Add(toEmail);
-                mail.Subject = "Mật khẩu mới";
-                mail.Body = "Mật khẩu mới của bạn là: " + password;
+                MailMessage message = new MailMessage();
+                message.From = new MailAddress(fromMail);
+                message.Subject = "Test Subject";
+                message.To.Add(new MailAddress(toEmail));
+                message.Body = "Mật khẩu mới của bạn là: " + password;
+                message.IsBodyHtml = true;
 
-                smtpClient.Port = 587; // Cổng SMTP của máy chủ (có thể thay đổi)
+                var smtpClient = new SmtpClient("smtp.gmail.com")
+                {
+                    Port = 587,
+                    Credentials = new NetworkCredential(fromMail, fromPassword),
+                    EnableSsl = true,
+                };
 
-                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtpClient.UseDefaultCredentials = false;
-                smtpClient.Credentials = new NetworkCredential("nguyenkinhthanh11@gmail.com", "bichlinh0123"); // Thay thế bằng thông tin đăng nhập của bạn
-                smtpClient.EnableSsl = true; // Sử dụng SSL (nếu máy chủ hỗ trợ)
-
-                smtpClient.Send(mail);
+                smtpClient.Send(message);
                 MessageBox.Show("Vui lòng kiểm tra email của bạn để xem mật khẩu", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)

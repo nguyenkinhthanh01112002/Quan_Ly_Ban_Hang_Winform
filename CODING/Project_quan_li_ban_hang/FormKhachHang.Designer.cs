@@ -73,19 +73,20 @@
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDelete.BorderRadius = 10;
             this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDelete.FillColor = System.Drawing.Color.White;
+            this.btnDelete.FillColor = System.Drawing.Color.Transparent;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDelete.Location = new System.Drawing.Point(488, 78);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDelete.Location = new System.Drawing.Point(651, 96);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(68, 30);
+            this.btnDelete.Size = new System.Drawing.Size(91, 37);
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Xoá";
             this.btnDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -94,19 +95,20 @@
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnExit.BorderRadius = 10;
             this.btnExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnExit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnExit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnExit.FillColor = System.Drawing.Color.White;
+            this.btnExit.FillColor = System.Drawing.Color.Transparent;
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnExit.ForeColor = System.Drawing.Color.Black;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnExit.Location = new System.Drawing.Point(620, 78);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExit.Location = new System.Drawing.Point(827, 96);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(77, 30);
+            this.btnExit.Size = new System.Drawing.Size(103, 37);
             this.btnExit.TabIndex = 1;
             this.btnExit.Text = "Thoát";
             this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -115,19 +117,20 @@
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnUpdate.BorderRadius = 10;
             this.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnUpdate.FillColor = System.Drawing.Color.White;
+            this.btnUpdate.FillColor = System.Drawing.Color.Transparent;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
             this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
             this.btnUpdate.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnUpdate.Location = new System.Drawing.Point(320, 78);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdate.Location = new System.Drawing.Point(427, 96);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(101, 30);
+            this.btnUpdate.Size = new System.Drawing.Size(135, 37);
             this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -136,19 +139,20 @@
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSave.BorderRadius = 10;
             this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSave.FillColor = System.Drawing.Color.White;
+            this.btnSave.FillColor = System.Drawing.Color.Transparent;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSave.ForeColor = System.Drawing.Color.Black;
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSave.Location = new System.Drawing.Point(193, 78);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSave.Location = new System.Drawing.Point(257, 96);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(74, 30);
+            this.btnSave.Size = new System.Drawing.Size(99, 37);
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Lưu";
             this.btnSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -157,19 +161,20 @@
             // btnNew
             // 
             this.btnNew.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnNew.BorderRadius = 10;
             this.btnNew.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnNew.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnNew.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnNew.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnNew.FillColor = System.Drawing.Color.White;
+            this.btnNew.FillColor = System.Drawing.Color.Transparent;
             this.btnNew.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnNew.ForeColor = System.Drawing.Color.Black;
             this.btnNew.Image = ((System.Drawing.Image)(resources.GetObject("btnNew.Image")));
             this.btnNew.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnNew.Location = new System.Drawing.Point(41, 78);
-            this.btnNew.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNew.Location = new System.Drawing.Point(55, 96);
+            this.btnNew.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(109, 30);
+            this.btnNew.Size = new System.Drawing.Size(145, 37);
             this.btnNew.TabIndex = 1;
             this.btnNew.Text = "Thêm mới";
             this.btnNew.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -178,6 +183,7 @@
             // btnTimKiem
             // 
             this.btnTimKiem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnTimKiem.BorderRadius = 10;
             this.btnTimKiem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnTimKiem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnTimKiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -187,10 +193,10 @@
             this.btnTimKiem.ForeColor = System.Drawing.Color.Black;
             this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
             this.btnTimKiem.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnTimKiem.Location = new System.Drawing.Point(458, 32);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTimKiem.Location = new System.Drawing.Point(611, 39);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(98, 30);
+            this.btnTimKiem.Size = new System.Drawing.Size(131, 37);
             this.btnTimKiem.TabIndex = 1;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -198,6 +204,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox2.Controls.Add(this.btnDelete);
             this.groupBox2.Controls.Add(this.btnExit);
             this.groupBox2.Controls.Add(this.btnUpdate);
@@ -207,11 +214,11 @@
             this.groupBox2.Controls.Add(this.txtTkkh);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(0, 491);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Location = new System.Drawing.Point(0, 605);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(759, 136);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(1012, 167);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Bảng điều khiển";
@@ -227,13 +234,13 @@
             this.txtTkkh.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTkkh.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTkkh.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTkkh.Location = new System.Drawing.Point(224, 32);
-            this.txtTkkh.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtTkkh.Location = new System.Drawing.Point(299, 39);
+            this.txtTkkh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTkkh.Name = "txtTkkh";
             this.txtTkkh.PasswordChar = '\0';
             this.txtTkkh.PlaceholderText = "Nhập vào tên khách hàng cần tìm";
             this.txtTkkh.SelectedText = "";
-            this.txtTkkh.Size = new System.Drawing.Size(217, 30);
+            this.txtTkkh.Size = new System.Drawing.Size(289, 37);
             this.txtTkkh.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtTkkh.TabIndex = 0;
             // 
@@ -275,10 +282,10 @@
             this.lsvDskh.FullRowSelect = true;
             this.lsvDskh.GridLines = true;
             this.lsvDskh.HideSelection = false;
-            this.lsvDskh.Location = new System.Drawing.Point(2, 21);
-            this.lsvDskh.Margin = new System.Windows.Forms.Padding(2);
+            this.lsvDskh.Location = new System.Drawing.Point(3, 25);
+            this.lsvDskh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lsvDskh.Name = "lsvDskh";
-            this.lsvDskh.Size = new System.Drawing.Size(755, 288);
+            this.lsvDskh.Size = new System.Drawing.Size(1006, 356);
             this.lsvDskh.TabIndex = 0;
             this.lsvDskh.UseCompatibleStateImageBehavior = false;
             this.lsvDskh.View = System.Windows.Forms.View.Details;
@@ -289,11 +296,11 @@
             this.groupBox1.Controls.Add(this.lsvDskh);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(0, 180);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Location = new System.Drawing.Point(0, 222);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(759, 311);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(1012, 383);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách khách hàng";
@@ -309,13 +316,13 @@
             this.txtTenKh.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenKh.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTenKh.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenKh.Location = new System.Drawing.Point(178, 85);
-            this.txtTenKh.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtTenKh.Location = new System.Drawing.Point(237, 105);
+            this.txtTenKh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTenKh.Name = "txtTenKh";
             this.txtTenKh.PasswordChar = '\0';
             this.txtTenKh.PlaceholderText = "";
             this.txtTenKh.SelectedText = "";
-            this.txtTenKh.Size = new System.Drawing.Size(179, 23);
+            this.txtTenKh.Size = new System.Drawing.Size(239, 28);
             this.txtTenKh.TabIndex = 2;
             // 
             // txtSdt
@@ -329,13 +336,13 @@
             this.txtSdt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSdt.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSdt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSdt.Location = new System.Drawing.Point(178, 48);
-            this.txtSdt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtSdt.Location = new System.Drawing.Point(237, 59);
+            this.txtSdt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSdt.Name = "txtSdt";
             this.txtSdt.PasswordChar = '\0';
             this.txtSdt.PlaceholderText = "";
             this.txtSdt.SelectedText = "";
-            this.txtSdt.Size = new System.Drawing.Size(171, 23);
+            this.txtSdt.Size = new System.Drawing.Size(228, 28);
             this.txtSdt.TabIndex = 2;
             // 
             // guna2HtmlLabel1
@@ -343,10 +350,10 @@
             this.guna2HtmlLabel1.AutoSize = false;
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(329, 17);
-            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(439, 21);
+            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(174, 25);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(232, 31);
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "KHÁCH HÀNG";
             // 
@@ -354,10 +361,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(4, 6);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(5, 7);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 17);
+            this.label2.Size = new System.Drawing.Size(68, 20);
             this.label2.TabIndex = 10;
             this.label2.Text = "Địa chỉ";
             // 
@@ -365,10 +371,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 43);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(9, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 17);
+            this.label1.Size = new System.Drawing.Size(46, 20);
             this.label1.TabIndex = 9;
             this.label1.Text = "Phái";
             // 
@@ -376,10 +381,10 @@
             // 
             this.radNam.AutoSize = true;
             this.radNam.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.radNam.Location = new System.Drawing.Point(108, 45);
-            this.radNam.Margin = new System.Windows.Forms.Padding(2);
+            this.radNam.Location = new System.Drawing.Point(144, 55);
+            this.radNam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radNam.Name = "radNam";
-            this.radNam.Size = new System.Drawing.Size(47, 17);
+            this.radNam.Size = new System.Drawing.Size(57, 20);
             this.radNam.TabIndex = 7;
             this.radNam.TabStop = true;
             this.radNam.Text = "Nam";
@@ -389,10 +394,10 @@
             // 
             this.radNu.AutoSize = true;
             this.radNu.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.radNu.Location = new System.Drawing.Point(218, 45);
-            this.radNu.Margin = new System.Windows.Forms.Padding(2);
+            this.radNu.Location = new System.Drawing.Point(291, 55);
+            this.radNu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radNu.Name = "radNu";
-            this.radNu.Size = new System.Drawing.Size(39, 17);
+            this.radNu.Size = new System.Drawing.Size(45, 20);
             this.radNu.TabIndex = 8;
             this.radNu.TabStop = true;
             this.radNu.Text = "Nữ";
@@ -409,13 +414,13 @@
             this.txtDiaChi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDiaChi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDiaChi.Location = new System.Drawing.Point(98, 0);
-            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtDiaChi.Location = new System.Drawing.Point(131, 0);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.PasswordChar = '\0';
             this.txtDiaChi.PlaceholderText = "";
             this.txtDiaChi.SelectedText = "";
-            this.txtDiaChi.Size = new System.Drawing.Size(186, 23);
+            this.txtDiaChi.Size = new System.Drawing.Size(248, 28);
             this.txtDiaChi.TabIndex = 2;
             // 
             // panel1
@@ -427,19 +432,18 @@
             this.panel1.Controls.Add(this.radNam);
             this.panel1.Controls.Add(this.radNu);
             this.panel1.Controls.Add(this.txtDiaChi);
-            this.panel1.Location = new System.Drawing.Point(406, 47);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(541, 58);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(302, 102);
+            this.panel1.Size = new System.Drawing.Size(403, 126);
             this.panel1.TabIndex = 10;
             // 
             // lblErrorPhai
             // 
             this.lblErrorPhai.AutoSize = true;
-            this.lblErrorPhai.Location = new System.Drawing.Point(10, 73);
-            this.lblErrorPhai.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblErrorPhai.Location = new System.Drawing.Point(13, 90);
             this.lblErrorPhai.Name = "lblErrorPhai";
-            this.lblErrorPhai.Size = new System.Drawing.Size(0, 13);
+            this.lblErrorPhai.Size = new System.Drawing.Size(0, 16);
             this.lblErrorPhai.TabIndex = 11;
             // 
             // guna2CustomGradientPanel1
@@ -452,9 +456,9 @@
             this.guna2CustomGradientPanel1.Controls.Add(this.guna2HtmlLabel1);
             this.guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(759, 180);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1012, 222);
             this.guna2CustomGradientPanel1.TabIndex = 3;
             // 
             // label4
@@ -462,10 +466,9 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(49, 91);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(65, 112);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 17);
+            this.label4.Size = new System.Drawing.Size(141, 20);
             this.label4.TabIndex = 11;
             this.label4.Text = "Tên khách hàng";
             // 
@@ -474,22 +477,21 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(49, 54);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(65, 66);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 18);
+            this.label3.Size = new System.Drawing.Size(134, 24);
             this.label3.TabIndex = 11;
             this.label3.Text = "Số điện thoại";
             // 
             // frmKhachHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(759, 651);
+            this.ClientSize = new System.Drawing.Size(1012, 801);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.guna2CustomGradientPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmKhachHang";
             this.Text = "FormKhachHang";
             this.Load += new System.EventHandler(this.frmKhachHang_Load);

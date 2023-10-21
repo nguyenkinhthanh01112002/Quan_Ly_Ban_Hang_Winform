@@ -19,7 +19,7 @@ namespace Project_quan_li_ban_hang
         SqlConnection sqlCon = null;
         SqlDataAdapter adapter = null;
         DataSet ds = null;
-       
+        string chucNang = "";
         public frmLogin()
         {
             InitializeComponent();
@@ -46,6 +46,7 @@ namespace Project_quan_li_ban_hang
             
             foreach (DataRow row in nhanvienTb.Rows)
             {
+                chucNang = row["RoleId"].ToString().Trim();
                 string email = row["Email"].ToString().Trim();
                 string savedPassword = row["PasswordHash"].ToString();
                 // Bây giờ bạn có thể làm gì đó với giá trị email
@@ -62,6 +63,7 @@ namespace Project_quan_li_ban_hang
             {
                 string email = txtEmail.Text.Trim().ToString();
                 MessageBox.Show("Logined successfully","Notification",MessageBoxButtons.OK,MessageBoxIcon.Information);
+               
                 try
                 {
                     // Tạo kết nối SQL
@@ -85,9 +87,18 @@ namespace Project_quan_li_ban_hang
                         SqlCommandBuilder buider = new SqlCommandBuilder(adapter);
                         // Cập nhật dữ liệu trong cơ sở dữ liệu bằng cách sử dụng SqlDataAdapter
                         adapter.Update(dataTable);
-                        frmSanPham frmSp = new frmSanPham();
-                        frmSp.Show();
-                        this.Hide();
+                        if (chucNang == "admin")
+                        {
+                            frmQuanTri quanTri = new frmQuanTri();
+                            this.Hide();
+                            quanTri.Show();
+                        }
+                        else
+                        {
+                            frmNhanvienQuanLy nvQl = new frmNhanvienQuanLy();
+                            this.Hide();
+                            nvQl.Show();
+                        }
 
                     }
                 }
@@ -129,6 +140,51 @@ namespace Project_quan_li_ban_hang
         private void lblQuenMk_Click_1(object sender, EventArgs e)
         {
             MessageBox.Show("Bạn cần nhập email để khôi phục lại mật khẩu", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            frmXnmk xnmk = new frmXnmk();
+            this.Hide();
+            xnmk.Show();
+        }
+
+        private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMatKhau_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDangKy_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmMenu menu = new frmMenu();
+            menu.Show();
         }
     }
 }

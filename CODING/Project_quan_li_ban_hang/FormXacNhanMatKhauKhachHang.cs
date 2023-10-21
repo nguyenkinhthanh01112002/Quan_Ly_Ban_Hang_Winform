@@ -14,78 +14,70 @@ using System.Windows.Forms;
 
 namespace Project_quan_li_ban_hang
 {
-    public partial class frmXnmk : Form
+    public partial class frmXnmkKh : Form
     {
         string strCon = @"Data Source=NGUYENKINHTHANH\SQLEXPRESS;Initial Catalog=PROJECT_QUAN_LI_BAN_HANG;Integrated Security=True";
         SqlConnection sqlCon = null;
         SqlDataAdapter adapter = null;
         DataSet ds = null;
-        public frmXnmk()
+        public frmXnmkKh()
         {
             InitializeComponent();
-        }
-
-        private void guna2PictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnSend_Click(object sender, EventArgs e)
         {
             txtShowInvEmail.Visible = false;
-            if(sqlCon == null)
+            if (sqlCon == null)
             {
                 sqlCon = new SqlConnection(strCon);
             }
-            DataTable nhanvienTb = new DataTable();
+            DataTable khachHangTb = new DataTable();
 
             // Tạo truy vấn SQL để lấy dữ liệu từ bảng NHANVIEN
-            string sqlQuery = "select * from Employees";
+            string sqlQuery = "select * from KhachHangOnline";
 
             // Tạo đối tượng SqlDataAdapter để lấy dữ liệu và điền vào DataTable
             adapter = new SqlDataAdapter(sqlQuery, sqlCon);
 
             SqlCommandBuilder buider = new SqlCommandBuilder(adapter);
-            adapter.Fill(nhanvienTb);
+            adapter.Fill(khachHangTb);
 
-           
+
             string email = txtEmail.Text.Trim().ToString();
             KiemTraNgoaiLe kt = new KiemTraNgoaiLe();
             bool check = kt.IsValidEmail(email);
             if (check)
             {
-                foreach (DataRow row in nhanvienTb.Rows)
+                foreach (DataRow row in khachHangTb.Rows)
                 {
                     string savedEmail = row["Email"].ToString().Trim();
 
                     // Bây giờ bạn có thể làm gì đó với giá trị email
-                    if (email.ToLower().Equals(txtEmail.Text.Trim().ToString()))
+                    if (email.ToLower().Equals(savedEmail.ToLower()))
                     {
                         string password = GenerateRandomPassword(5);
                         string inputPasswordHash = ComputeSha256Hash(password);
-                        SendPasswordEmail(email,password);
+                        SendPasswordEmail(email, password);
                         row["PasswordHash"] = inputPasswordHash;
-                        int kq = adapter.Update(nhanvienTb);
+                        int kq = adapter.Update(khachHangTb);
                         if (kq > 0)
                         {
-                            MessageBox.Show(password+" -- " + row["Email"].ToString());
-                            frmLogin login = new frmLogin();
-                            login.Show();
+                            MessageBox.Show("Mật khẩu mơi đã được gửi tới địa chỉ email: " + email);
+                            frmDangNhapKhachHang dnkh = new frmDangNhapKhachHang();
                             this.Hide();
-                          
+                            dnkh.Show();                        
                         }
-                        break;
-
                     }
                 }
+                MessageBox.Show("Bạn chưa có tài khoản","Notification",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             else
             {
                 txtShowInvEmail.Visible = true;
+               
             }
-
         }
-        // ham random mk
         static string GenerateRandomPassword(int length)
         {
             // Chuỗi ký tự chứa các chữ số từ 0 đến 9
@@ -124,23 +116,25 @@ namespace Project_quan_li_ban_hang
         {
             try
             {
-                MailMessage mail = new MailMessage();
-                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com"); // Thay thế bằng máy chủ SMTP thực tế
+                string fromMail = "nguyenkinhthanh11@gmail.com";
+                string fromPassword = "rrsj izbc pxnl vuuk";
 
-                mail.From = new MailAddress("nguyenkinhthanh11@gmail.com"); // Thay thế bằng địa chỉ email của bạn
-                mail.To.Add(toEmail);
-                mail.Subject = "Mật khẩu mới";
-                mail.Body = "Mật khẩu mới của bạn là: " + password;
+                MailMessage message = new MailMessage();
+                message.From = new MailAddress(fromMail);
+                message.Subject = "Test Subject";
+                message.To.Add(new MailAddress(toEmail));
+                message.Body = "Mật khẩu mới của bạn là: " + password;
+                message.IsBodyHtml = true;
 
-                smtpClient.Port = 587; // Cổng SMTP của máy chủ (có thể thay đổi)
-               
-                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtpClient.UseDefaultCredentials = false;
-                smtpClient.Credentials = new NetworkCredential("nguyenkinhthanh11@gmail.com", "bichlinh0123"); // Thay thế bằng thông tin đăng nhập của bạn
-                smtpClient.EnableSsl = true; // Sử dụng SSL (nếu máy chủ hỗ trợ)
+                var smtpClient = new SmtpClient("smtp.gmail.com")
+                {
+                    Port = 587,
+                    Credentials = new NetworkCredential(fromMail, fromPassword),
+                    EnableSsl = true,
+                };
 
-                smtpClient.Send(mail);
-                MessageBox.Show("Vui lòng kiểm tra email của bạn để xem mật khẩu","Notification",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                smtpClient.Send(message);
+                MessageBox.Show("Vui lòng kiểm tra email của bạn để xem mật khẩu", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -150,6 +144,14 @@ namespace Project_quan_li_ban_hang
         private void frmXnmk_Load(object sender, EventArgs e)
         {
             txtShowInvEmail.Visible = false;
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmDangNhapKhachHang khachHang = new frmDangNhapKhachHang();
+            this.Hide();
+            khachHang.Show();
         }
     }
 }

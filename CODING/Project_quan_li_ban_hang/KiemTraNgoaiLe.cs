@@ -19,7 +19,7 @@ namespace Project_quan_li_ban_hang
         }
         public bool IsNameValid(string name)
         {
-            if(name.Length == 0)
+            if (name.Length == 0)
             {
                 return false;
             }
@@ -32,9 +32,9 @@ namespace Project_quan_li_ban_hang
             }
             return true; // Tên không chứa số
         }
-        public  bool IsAddressValid(string address)
+        public bool IsAddressValid(string address)
         {
-            if(address.Length == 0) 
+            if (address.Length == 0)
             {
                 return false;
             }
@@ -48,7 +48,7 @@ namespace Project_quan_li_ban_hang
             {
                 return true;
             }
-           return false;
+            return false;
         }
         public bool IsNumberProductValid(string number)
         {
@@ -67,7 +67,7 @@ namespace Project_quan_li_ban_hang
             }
 
         }
-        public bool IsMoneyValid(string money) 
+        public bool IsMoneyValid(string money)
         {
             float soTien;
             if (float.TryParse(money, out soTien))
@@ -86,6 +86,15 @@ namespace Project_quan_li_ban_hang
                 return false;
             }
 
+        }
+        public bool IsValidPassword(string matKhau)
+        {
+            // Kiểm tra chiều dài của mật khẩu
+            if (string.IsNullOrWhiteSpace(matKhau) || matKhau.Length != 5)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

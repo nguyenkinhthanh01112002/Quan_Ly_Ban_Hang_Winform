@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,182 +19,104 @@ namespace Project_quan_li_ban_hang
         SqlConnection sqlCon = null;
         SqlDataAdapter adapter = null;
         DataSet ds = null;
-
-        public frmSanPhamKhachHang()
+        bool checkDn = false;
+        string maKH = "";
+        public frmSanPhamKhachHang(string maKhachHang)
         {
             InitializeComponent();
+            this.maKH = maKhachHang;
         }
+        private Form currentFormChild;
 
+        private void OpenChildForm(Form childForm)
+        {
+            if (currentFormChild != null)
+            {
+                currentFormChild.Close();
+            }
+            currentFormChild = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel_Body.Controls.Add(childForm);
+            panel_Body.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
+        private void Add_Logout_Button()
+        {
+            Button logout_button = new Button();
+            logout_button.Text = "Thoát"; // Đặt văn bản của nút là "Thoát"
+            logout_button.Location = new Point(730,20);
+            logout_button.Width = 100;
+            logout_button.Height = 30;
+            logout_button.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+            logout_button.ForeColor = Color.Black;
+
+            // Thiết lập nền trong suốt
+            logout_button.FlatStyle = FlatStyle.Flat;
+            logout_button.FlatAppearance.BorderSize = 0;
+            logout_button.BackColor = Color.Transparent;
+
+            // Tạo góc bo tròn cho nút
+           
+            logout_button.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, logout_button.Width, logout_button.Height, 10, 10));
+            // Thêm sự kiện Click cho nút "Thoát"
+            logout_button.Click += (sender, e) =>
+            {
+                // Đóng form con hiện tại khi nút "Thoát" được nhấp
+                this.Hide();
+                frmMenu frmMenu = new frmMenu();
+                frmMenu.Show();
+            };
+
+            panel_heading.Controls.Add(logout_button);
+        }
         private void frmSanPhamKhachHang_Load(object sender, EventArgs e)
         {
-            grpCtdh.Visible = false;
-            LoadDssp();
-        }
-        private void  LoadDssp()
-        {
-            if (sqlCon == null)
+            if (maKH.Length != 0)
             {
-                sqlCon = new SqlConnection(strCon);
+                btnSigin.Visible = false;
+                btnSigup.Visible = false;
+                btnBack.Visible = false;
+               Add_Logout_Button();
             }
-            string cmd = "\r\nselect * from SANPHAM";
-            adapter = new SqlDataAdapter(cmd, sqlCon);
-            DataTable tblSp = new DataTable();
-            adapter.Fill(tblSp);
-            lsvDssp.Items.Clear();
-            foreach (DataRow dr in tblSp.Rows)
-            {    
-                string maSp = dr["MaSp"].ToString();
-                string tenSp = dr["TenSp"].ToString();
-                string soLuong = dr["SoLuong"].ToString();
-                string donGiaBan = dr["DonGiaBan"].ToString();
-                string ghiChu = dr["GhiChu"].ToString();
-                ListViewItem item = new ListViewItem(maSp);
-                item.SubItems.Add(tenSp);
-                item.SubItems.Add(soLuong);
-                item.SubItems.Add(donGiaBan);        
-                item.SubItems.Add(ghiChu);
-                lsvDssp.Items.Add(item);
-            }
-        }
-        private void Load_FoundSp(string tenSp)
-        {
-            // Thay thế bằng chuỗi kết nối thực tế của bạn
-            using (SqlConnection connection = new SqlConnection(strCon))
+            else
             {
-                connection.Open();
-
-                // Tạo câu truy vấn SQL SELECT dựa trên tên nhân viên
-                string sqlSelect = "SELECT * FROM SANPHAM WHERE TenSp LIKE @TenSp";
-
-                // Tạo đối tượng SqlDataAdapter
-                SqlDataAdapter adapter = new SqlDataAdapter(sqlSelect, connection);
-
-                // Định nghĩa tham số
-                adapter.SelectCommand.Parameters.AddWithValue("@TenSp", "%" + tenSp + "%"); // Tìm tất cả nhân viên có tên chứa chuỗi tìm kiếm
-
-                // Tạo DataTable để lưu trữ dữ liệu
-                DataTable dataTable = new DataTable();
-
-                // Đổ dữ liệu từ cơ sở dữ liệu vào DataTable
-                adapter.Fill(dataTable);
-
-                // Hiển thị kết quả tìm kiếm trong giao diện người dùng (ví dụ: trong một DataGridView)
-                lsvDssp.Items.Clear();
-                foreach (DataRow dr in dataTable.Rows)
-                {
-                    string maSp = dr["MaSp"].ToString();
-                    string tenSP = dr["TenSp"].ToString();
-                    string soLuong = dr["SoLuong"].ToString();              
-                    string donGiaBan = dr["DonGiaBan"].ToString();              
-                    string ghiChu = dr["GhiChu"].ToString();
-                    ListViewItem item = new ListViewItem(maSp);
-                    item.SubItems.Add(tenSP);
-                    item.SubItems.Add(soLuong);                  
-                    item.SubItems.Add(donGiaBan);              
-                    item.SubItems.Add(ghiChu);
-                    lsvDssp.Items.Add(item);
-                }
+                btnSigup.Visible = true;
+                btnSigin.Visible = true;
+                btnBack.Visible = true;  
             }
+            OpenChildForm(new frmChiTietDonHang(maKH));
         }
+
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            string tenSp = txtTkspkh.Text.Trim().ToString();
-            if (tenSp.Length == 0)
-            {
-                lsvDssp.Items.Clear();
-                return;
-            }
-            Load_FoundSp(tenSp);
+            OpenChildForm(new frmSanPhamTimKiem(txtTkspkh.Text.Trim().ToString(),maKH));
+            txtTksp.ResetText();
         }
 
-        private void btnTang_Click(object sender, EventArgs e)
+        private void btnSigin_Click(object sender, EventArgs e)
         {
-            
-            int soLuongMua = int.Parse(lblSoLuong.Text);
-            if (soLuongMua < slSpTt)
-            {
-                soLuongMua++;
-                lblSoLuong.Text = soLuongMua.ToString();
-            }
-            else
-            {
-                MessageBox.Show("Hiện tại sản phẩm của chúng tôi không đủ để đáp ứng nhu cầu của bạn");
-            }
-        }
-        int slSpTt = 0;
-        private void lsvDssp_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            grpCtdh.Visible = true;
-            if(lsvDssp.SelectedItems.Count == 0) { return; }
-            ListViewItem items = lsvDssp.SelectedItems[0];
-            string foundMsp = items.SubItems[0].Text.Trim().ToString();
-            string tenSp = items.SubItems[1].Text.Trim().ToString();
-            string soLuong = items.SubItems[2].Text.Trim().ToString();
-            string pathString = "";
-            slSpTt = int.Parse(soLuong);
-            using (SqlConnection connection = new SqlConnection(strCon))
-            {
-                connection.Open();
-
-                 // Mã sản phẩm bạn muốn truy vấn
-                string sqlQuery = "SELECT HinhAnh FROM SANPHAM WHERE MaSp = @MaSp";
-
-                using (SqlCommand command = new SqlCommand(sqlQuery, connection))
-                {
-                    command.Parameters.Add("@MaSp", SqlDbType.VarChar).Value = foundMsp;
-
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            pathString = reader["HinhAnh"].ToString();
-                            
-                        }
-                        else
-                        {
-                            MessageBox.Show("Hình ảnh đang gặp vấn đề", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                }
-            }
-
-
-            if (File.Exists(pathString)) // Kiểm tra xem tệp hình ảnh có tồn tại hay không
-            {
-                try
-                {
-                    Image image = Image.FromFile(pathString); // Tạo đối tượng hình ảnh từ đường dẫn
-
-                    pic_Ctdh.Image = image; // Gán hình ảnh cho PictureBox
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi khi tải hình ảnh: " + ex.Message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Tệp hình ảnh không tồn tại.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btnGiamU_Click(object sender, EventArgs e)
-        {
-            int giam = int.Parse(lblSoLuong.Text);
-            giam--;
-            if (giam >= 0)
-            {
-                lblSoLuong.Text = giam.ToString();
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn số lượng sản phẩm bạn muốn mua");
-            }
+            frmDangNhapKhachHang dangNhap = new frmDangNhapKhachHang();
+            this.Hide();
+            dangNhap.Show();
         }
 
         private void btnSigup_Click(object sender, EventArgs e)
         {
+            frmDangKy dangKy = new frmDangKy();
+            this.Hide();
+            dangKy.Show();
+        }
 
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            frmMenu menu = new frmMenu();
+            this.Hide();
+            menu.Show();
         }
     }
 }

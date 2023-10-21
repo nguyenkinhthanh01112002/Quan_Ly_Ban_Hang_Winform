@@ -20,3 +20,9 @@ E:\Dự án mẫu (UDPM.NET)\Quan_Li_Ban_Hang\CODING\Project_quan_li_ban_hang\ob
 E:\Dự án mẫu (UDPM.NET)\Quan_Li_Ban_Hang\CODING\Project_quan_li_ban_hang\obj\Debug\Project_quan_li_ban_hang.frmQuanTri.resources
 E:\Dự án mẫu (UDPM.NET)\Quan_Li_Ban_Hang\CODING\Project_quan_li_ban_hang\obj\Debug\Project_quan_li_ban_hang.frmSanPhamKhachHang.resources
 E:\Dự án mẫu (UDPM.NET)\Quan_Li_Ban_Hang\CODING\Project_quan_li_ban_hang\obj\Debug\Project_quan_li_ban_hang.frmNhanvienQuanLy.resources
+E:\Dự án mẫu (UDPM.NET)\Quan_Li_Ban_Hang\CODING\Project_quan_li_ban_hang\obj\Debug\Project_quan_li_ban_hang.frmChiTietDonHang.resources
+E:\Dự án mẫu (UDPM.NET)\Quan_Li_Ban_Hang\CODING\Project_quan_li_ban_hang\obj\Debug\Project_quan_li_ban_hang.frmSanPhamTimKiem.resources
+E:\Dự án mẫu (UDPM.NET)\Quan_Li_Ban_Hang\CODING\Project_quan_li_ban_hang\obj\Debug\Project_quan_li_ban_hang.frmGioHang.resources
+E:\Dự án mẫu (UDPM.NET)\Quan_Li_Ban_Hang\CODING\Project_quan_li_ban_hang\obj\Debug\Project_quan_li_ban_hang.frmDangNhapKhachHang.resources
+E:\Dự án mẫu (UDPM.NET)\Quan_Li_Ban_Hang\CODING\Project_quan_li_ban_hang\obj\Debug\Project_quan_li_ban_hang.frmXnmkKh.resources
+E:\Dự án mẫu (UDPM.NET)\Quan_Li_Ban_Hang\CODING\Project_quan_li_ban_hang\obj\Debug\Project_quan_li_ban_hang.frmThongKe.resources

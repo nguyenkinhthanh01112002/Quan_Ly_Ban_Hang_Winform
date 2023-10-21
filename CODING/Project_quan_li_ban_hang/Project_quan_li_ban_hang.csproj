@@ -55,6 +55,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormDangNhapKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDangNhapKhachHang.Designer.cs">
+      <DependentUpon>FormDangNhapKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGIoHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGIoHang.Designer.cs">
+      <DependentUpon>FormGIoHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHienThiSanPhamTimKiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHienThiSanPhamTimKiem.Designer.cs">
+      <DependentUpon>FormHienThiSanPhamTimKiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,12 +133,26 @@
     <Compile Include="FormSanPhamKhachHang.Designer.cs">
       <DependentUpon>FormSanPhamKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormXacNhanMatKhau.cs">
+    <Compile Include="FormThongKe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormXacNhanMatKhau.Designer.cs">
-      <DependentUpon>FormXacNhanMatKhau.cs</DependentUpon>
+    <Compile Include="FormThongKe.Designer.cs">
+      <DependentUpon>FormThongKe.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormXacNhanMatKhauKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormXacNhanMatKhauKhachHang.Designer.cs">
+      <DependentUpon>FormXacNhanMatKhauKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormXacNhanMatKhauNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormXacNhanMatKhauNhanVien.Designer.cs">
+      <DependentUpon>FormXacNhanMatKhauNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HoaDon.cs" />
+    <Compile Include="HoaDonChiTiet.cs" />
     <Compile Include="KhachHang.cs" />
     <Compile Include="KhachHangRepository.cs" />
     <Compile Include="KiemTraNgoaiLe.cs" />
@@ -132,6 +164,15 @@
     <Compile Include="SanPhamRepository.cs" />
     <EmbeddedResource Include="FormDangKy.resx">
       <DependentUpon>FormDangKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDangNhapKhachHang.resx">
+      <DependentUpon>FormDangNhapKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGIoHang.resx">
+      <DependentUpon>FormGIoHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHienThiSanPhamTimKiem.resx">
+      <DependentUpon>FormHienThiSanPhamTimKiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormKhachHang.resx">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
@@ -160,8 +201,14 @@
     <EmbeddedResource Include="FormSanPhamKhachHang.resx">
       <DependentUpon>FormSanPhamKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormXacNhanMatKhau.resx">
-      <DependentUpon>FormXacNhanMatKhau.cs</DependentUpon>
+    <EmbeddedResource Include="FormThongKe.resx">
+      <DependentUpon>FormThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormXacNhanMatKhauKhachHang.resx">
+      <DependentUpon>FormXacNhanMatKhauKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormXacNhanMatKhauNhanVien.resx">
+      <DependentUpon>FormXacNhanMatKhauNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -40,24 +40,24 @@ namespace Project_quan_li_ban_hang
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-            frmSanPhamKhachHang formKH = new frmSanPhamKhachHang();
+            frmSanPhamKhachHang formKH = new frmSanPhamKhachHang("");
             this.Hide();
             formKH.Show();
         }
 
         private void btnEmployee_Click(object sender, EventArgs e)
         {
-           frmNhanvienQuanLy nVQl = new frmNhanvienQuanLy();
+            frmLogin login = new frmLogin();
             this.Hide();
-            nVQl.Show();
+            login.Show();
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            frmSanPhamKhachHang formKH = new frmSanPhamKhachHang();
+            frmSanPhamKhachHang formKH = new frmSanPhamKhachHang("");
             this.Hide();
             formKH.Show();
-            ;        }
+        }
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
@@ -70,6 +70,11 @@ namespace Project_quan_li_ban_hang
             {
                 currentFormChild.Close();
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
